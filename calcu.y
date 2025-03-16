@@ -50,7 +50,7 @@ exp
     const auto it = ufunc_table.find($1);
 
     if (it == ufunc_table.end()) {
-      fprintf(stderr, "unknown function `%s`", $1);
+      fprintf(stderr, "unknown function `%s`\n", $1);
       exit(-1);
     }
 
@@ -60,7 +60,7 @@ exp
     const auto it = bfunc_table.find($1);
 
     if (it == bfunc_table.end()) {
-      fprintf(stderr, "unknown function `%s`", $1);
+      fprintf(stderr, "unknown function `%s`\n", $1);
       exit(-1);
     }
 
@@ -70,6 +70,6 @@ exp
 %%
 
 void yyerror(double& result, const char* s) {
-  fprintf(stderr, "error: %s", s);
+  fprintf(stderr, "error: %s\n", s);
   exit(-1);
 }
