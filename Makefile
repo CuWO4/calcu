@@ -16,7 +16,7 @@ SRCS := $(wildcard *.$(EXTERN))
 OBJS := $(patsubst %.$(EXTERN), $(TMPDIR)/%.o, $(SRCS))
 DEPS := $(patsubst %.$(EXTERN), $(TMPDIR)/%.d, $(SRCS))
 
-FFLAGS :=
+FFLAGS := -d
 BFLAGS := -d
 
 # flex & bison source files
@@ -33,7 +33,7 @@ $(DEBUGDIR)/$(TARGET) : $(OBJS) $(FB_CFILES) | $(DEBUGDIR)
 	@ echo completed!
 
 # compile #
-$(TMPDIR)/%.o : %.$(EXTERN) | $(TMPDIR)
+$(TMPDIR)/%.o : %.$(EXTERN) $(F_CFILES) | $(TMPDIR)
 	@ echo compiling $<...
 	$(COMPILER) $< -o $@ -c $(COMPILE_OPTION) $(COMPILE_OPTION_DES)
 
