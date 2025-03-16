@@ -22,11 +22,9 @@ Output binary will be generated in `debug/` directory.
 
 environment:
 
-> Ubuntu clang version 13.0.1-2ubuntu2.2
->
-> flex 2.6.4
->
-> bison (GNU Bison) 3.8.2
+- Ubuntu clang version 13.0.1-2ubuntu2.2
+- flex 2.6.4
+- bison (GNU Bison) 3.8.2
 
 ## USAGE
 
